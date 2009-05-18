@@ -1,10 +1,12 @@
 <% content_for('body') do %>
 
-  <% view do %>
-    <%= list_view :someData,
-        :content_value_key => 'prettyName',
-        :bind => { :content => 'Model.dataController.arrangedObjects' }
-    %>
+  <% view :main do %>
+    <% scroll_view :scrolly, :height=>'200px' do %>
+      <%= list_view :someData,
+          :content_value_key => 'prettyName',
+          :bind => { :content => 'Model.dataController.arrangedObjects' }
+      %>
+    <% end %>
 
     <%= button_view :some_button, 
       :title => 'Show guid'
