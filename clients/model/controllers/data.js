@@ -16,7 +16,4 @@ require('models/data');
 */
 Model.dataController = SC.CollectionController.create(
 /** @scope Model.dataController */ {
-  allRecords: function(){
-    return SC.Store.records({type:'Data'});
-  }.property()
 }) ;

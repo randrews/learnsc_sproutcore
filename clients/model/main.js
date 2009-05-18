@@ -31,4 +31,7 @@ function main() {
 
   // TODO: Set the content property on your primary controller
   // ex: Model.contactsController.set('content',Model.contacts);
+  var coll=Model.Data.collection();
+  coll.refresh();
+  Model.dataController.set('content',coll);
 } ;
