@@ -10,6 +10,16 @@ Test.context("Model.Data",{
 
   "TODO: Add your own tests here": function() {
     true.shouldEqual(true) ;
+  },
+
+  "humanName": function(){
+    var dwight=Model.Data.find(2);
+    dwight.get('humanName').shouldEqual("Dwight Schrute");
+  },
+
+  "prettyName": function(){
+    var dwight=Model.Data.find(2);
+    dwight.get('prettyName').shouldEqual("Schrute, Dwight");
   }
 
 }) ;
