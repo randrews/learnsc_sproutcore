@@ -5,14 +5,16 @@
 <% content_for('final') do %>
 
 <script>
+Model.server.preload(Model.FIXTURES) ;
 
 Test.context("Model.Data",{
 
   "TODO: Add your own tests here": function() {
-    true.shouldEqual(true) ;
+    true.shouldEqual(true);
   },
 
   "humanName": function(){
+    T=this;
     var dwight=Model.Data.find(2);
     dwight.get('humanName').shouldEqual("Dwight Schrute");
   },
