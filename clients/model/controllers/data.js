@@ -13,18 +13,16 @@ require('core');
   @version 0.1
   @static
 */
-Model.dataController = SC.CollectionController.create(
+Model.dataController = SC.ArrayController.create(
 /** @scope Model.dataController */ {
-  listSelection:null,
+  allowsMultipleSelection:false,
 
-  selectedPerson:function(){
-    var sel=this.get('listSelection');
+  selectionHumanName:function(){
+    var sel=this.get('selection');
     if(sel==null){
       return "";
-    }else if(sel.length==0){
-      return "";
     }else{
-      return sel[0].get('humanName');
+      return sel.get('humanName');
     }
-  }.property('listSelection')
+  }.property('selection')
 }) ;

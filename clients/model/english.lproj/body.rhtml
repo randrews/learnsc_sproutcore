@@ -3,11 +3,10 @@
   <% view :main do %>
     <% scroll_view :scrolly, :height=>'200px' do %>
       <%= list_view :someData,
-	  :outlet => true,
           :content_value_key => 'prettyName',
           :bind => { 
               :content => 'Model.dataController.arrangedObjects',
-              :selection => 'Model.dataController.listSelection'
+              :selection => 'Model.dataController.selection'
           }
       %>
     <% end %>
@@ -16,7 +15,7 @@
       :title => 'Show guid'
     %>
     <%= label_view :human_label,
-	:bind=>{:value=>"Model.dataController.selectedPerson"}
+	:bind=>{:value=>"Model.dataController.selectionHumanName"}
     %>
   <% end %>
 <% end %>
