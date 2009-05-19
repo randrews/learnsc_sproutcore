@@ -15,7 +15,11 @@ function main() {
   // The default code here will load the fixtures you have defined.
   // Comment out the preload line and add something to refresh from the server
   // when you are ready to pull data from your server.
-  Model.server.preload(Model.FIXTURES) ;
+  if (Model.localMode) {
+    Model.server.preload(Model.FIXTURES);
+  } else {
+    Model.fetchPeople();
+  }
 
   // TODO: refresh() any collections you have created to get their records.
   // ex: Model.contacts.refresh() ;
