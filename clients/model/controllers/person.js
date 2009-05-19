@@ -23,5 +23,15 @@ Model.personController = SC.ObjectController.create(
     }catch(e){
       return "Select a person";
     }
-  }.property('content')
+  }.property('content'),
+
+  commitChangesImmediately: false,
+
+  commitRecord: function() {
+    this.commitChanges();
+    var content = this.get('content');
+    if (content && content.get('length') == 1) {
+      content.objectAt(0).commit();
+    }
+  }
 }) ;

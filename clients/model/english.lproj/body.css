@@ -27,3 +27,10 @@ body {
 { 
   margin-bottom: 10px;
  }
+
+#save_button
+{ 
+  display: block;
+  margin-top: 5px;
+  width: 75px;
+ }
