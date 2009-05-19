@@ -11,11 +11,13 @@
       %>
     <% end %>
 
-    <%= button_view :some_button, 
-      :title => 'Show guid'
-    %>
     <%= label_view :human_label,
-	:bind=>{:value=>"Model.peopleController.selectionHumanName"}
+	:bind=>{:value=>"Model.personController.humanName"}
+    %>
+    <hr/>
+    <label for="salary_field">Salary</label>
+    <%= text_field_view :salary_field,
+	:bind=>{:value=>"Model.personController.salary"}
     %>
   <% end %>
 <% end %>

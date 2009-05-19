@@ -13,31 +13,36 @@ Model.FIXTURES = Model.FIXTURES.concat([
   { guid: 1,
     type: 'Person',
     firstName: "Michael",
-    lastName: "Scott"
+    lastName: "Scott",
+    salary: 50000
   },
 
   { guid: 2,
     type: 'Person',
     firstName: "Dwight",
-    lastName: "Schrute"
+    lastName: "Schrute",
+    salary: 55000
   },
 
   { guid: 3,
     type: 'Person',
     firstName: "Jim",
-    lastName: "Halpert"
+    lastName: "Halpert",
+    salary: 60000
   },
 
   { guid: 4,
     type: 'Person',
     firstName: "Pam",
-    lastName: "Beesly"
+    lastName: "Beesly",
+    salary: 30000
   },
 
   { guid: 5,
     type: 'Person',
     firstName: "Ryan",
-    lastName: "Howard"
+    lastName: "Howard",
+    salary: 70000
   }
 
 ]);
