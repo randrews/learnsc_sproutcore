@@ -7,7 +7,7 @@
 <script>
 Model.server.preload(Model.FIXTURES) ;
 
-Test.context("Model.Data",{
+Test.context("Model.Person",{
 
   "TODO: Add your own tests here": function() {
     true.shouldEqual(true);
@@ -15,12 +15,12 @@ Test.context("Model.Data",{
 
   "humanName": function(){
     T=this;
-    var dwight=Model.Data.find(2);
+    var dwight=Model.Person.find(2);
     dwight.get('humanName').shouldEqual("Dwight Schrute");
   },
 
   "prettyName": function(){
-    var dwight=Model.Data.find(2);
+    var dwight=Model.Person.find(2);
     dwight.get('prettyName').shouldEqual("Schrute, Dwight");
   }
 

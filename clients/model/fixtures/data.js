@@ -1,5 +1,5 @@
 // ==========================================================================
-// Model.Data Fixtures
+// Model.Person Fixtures
 // ==========================================================================
 
 require('core') ;
@@ -11,31 +11,31 @@ Model.FIXTURES = Model.FIXTURES.concat([
   // name of your contact.  See the example below.
 
   { guid: 1,
-    type: 'Data',
+    type: 'Person',
     firstName: "Michael",
     lastName: "Scott"
   },
 
   { guid: 2,
-    type: 'Data',
+    type: 'Person',
     firstName: "Dwight",
     lastName: "Schrute"
   },
 
   { guid: 3,
-    type: 'Data',
+    type: 'Person',
     firstName: "Jim",
     lastName: "Halpert"
   },
 
   { guid: 4,
-    type: 'Data',
+    type: 'Person',
     firstName: "Pam",
     lastName: "Beesly"
   },
 
   { guid: 5,
-    type: 'Data',
+    type: 'Person',
     firstName: "Ryan",
     lastName: "Howard"
   }

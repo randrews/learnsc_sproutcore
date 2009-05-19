@@ -2,7 +2,7 @@
 
   <% view :main do %>
     <% scroll_view :scrolly, :height=>'200px' do %>
-      <%= list_view :someData,
+      <%= list_view :some_people,
           :content_value_key => 'prettyName',
           :bind => { 
               :content => 'Model.dataController.arrangedObjects',

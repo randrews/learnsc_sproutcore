@@ -15,13 +15,14 @@ Model = SC.Object.create({
 
   localMode: (window.location.hash === '#development'),
 
-
-
   fetchPeople: function(successFunction) {
     var opts = {
       method:'get',
       onSuccess: function(transport) {
 	Model.parseFetchResponse(transport);
+	var coll=Model.Person.findAll();
+	Model.dataController.set('content',coll);
+
 	if (successFunction) {
 	  successFunction();
 	}
@@ -44,7 +45,7 @@ Model = SC.Object.create({
     var record;
 
     while (idx--) {
-      record = Model.Data.newRecord(records[idx]);
+      record = Model.Person.newRecord(records[idx]);
       record.set('newRecord',false);
     }
   }

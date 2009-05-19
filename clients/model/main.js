@@ -11,33 +11,14 @@
 //
 function main() {
 
-  // Step 1: Load Your Model Data
-  // The default code here will load the fixtures you have defined.
-  // Comment out the preload line and add something to refresh from the server
-  // when you are ready to pull data from your server.
   if (Model.localMode) {
     Model.server.preload(Model.FIXTURES);
-    var coll=Model.Data.findAll();
+    var coll=Model.Person.findAll();
     Model.dataController.set('content',coll);
   } else {
     Model.fetchPeople(function(){
-      var coll=Model.Data.findAll();
-      Model.dataController.set('content',coll);
     });
   }
 
-  // TODO: refresh() any collections you have created to get their records.
-  // ex: Model.contacts.refresh() ;
-
-  // Step 2: Instantiate Your Views
-  // The default code just activates all the views you have on the page. If
-  // your app gets any level of complexity, you should just get the views you
-  // need to show the app in the first place, to speed things up.
-  SC.page.awake() ;
-
-  // Step 3. Set the content property on your primary controller.
-  // This will make your app come alive!
-
-  // TODO: Set the content property on your primary controller
-  // ex: Model.contactsController.set('content',Model.contacts);
+  SC.page.awake();
 } ;
