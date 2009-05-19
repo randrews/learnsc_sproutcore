@@ -17,8 +17,13 @@ function main() {
   // when you are ready to pull data from your server.
   if (Model.localMode) {
     Model.server.preload(Model.FIXTURES);
+    var coll=Model.Data.findAll();
+    Model.dataController.set('content',coll);
   } else {
-    Model.fetchPeople();
+    Model.fetchPeople(function(){
+      var coll=Model.Data.findAll();
+      Model.dataController.set('content',coll);
+    });
   }
 
   // TODO: refresh() any collections you have created to get their records.
@@ -35,6 +40,4 @@ function main() {
 
   // TODO: Set the content property on your primary controller
   // ex: Model.contactsController.set('content',Model.contacts);
-  var coll=Model.Data.findAll();
-  Model.dataController.set('content',coll);
 } ;

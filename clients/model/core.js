@@ -13,5 +13,39 @@ Model = SC.Object.create({
   // main method.  When in production, this will be an empty array.
   FIXTURES: [],
 
-  localMode: window.location.hash === '#development'
+  localMode: (window.location.hash === '#development'),
+
+
+
+  fetchPeople: function(successFunction) {
+    var opts = {
+      method:'get',
+      onSuccess: function(transport) {
+	Model.parseFetchResponse(transport);
+	if (successFunction) {
+	  successFunction();
+	}
+      },
+
+      onFailure: function(transport) {
+	console.warn("Recipe fetching failed due to: '%@'".fmt(transport.statusText));
+      }
+    };
+
+    new Ajax.Request('/people',opts);
+  },
+
+
+  parseFetchResponse: function(transport) {
+    var response = transport.responseJSON;
+    var records = response.records;
+
+    var idx = records.length;
+    var record;
+
+    while (idx--) {
+      record = Model.Data.newRecord(records[idx]);
+      record.set('newRecord',false);
+    }
+  }
 }) ;
