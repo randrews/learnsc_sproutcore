@@ -1,5 +1,5 @@
 // ==========================================================================
-// Model.DataController
+// Model.PeopleController
 // ==========================================================================
 
 require('core');
@@ -13,8 +13,8 @@ require('core');
   @version 0.1
   @static
 */
-Model.dataController = SC.ArrayController.create(
-/** @scope Model.dataController */ {
+Model.peopleController = SC.ArrayController.create(
+/** @scope Model.peopleController */ {
   allowsMultipleSelection:false,
 
   selectionHumanName:function(){

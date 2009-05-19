@@ -14,10 +14,9 @@ function main() {
   if (Model.localMode) {
     Model.server.preload(Model.FIXTURES);
     var coll=Model.Person.findAll();
-    Model.dataController.set('content',coll);
+    Model.peopleController.set('content',coll);
   } else {
-    Model.fetchPeople(function(){
-    });
+    Model.fetchPeople();
   }
 
   SC.page.awake();

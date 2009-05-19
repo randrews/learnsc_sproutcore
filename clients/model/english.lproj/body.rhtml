@@ -5,8 +5,8 @@
       <%= list_view :some_people,
           :content_value_key => 'prettyName',
           :bind => { 
-              :content => 'Model.dataController.arrangedObjects',
-              :selection => 'Model.dataController.selection'
+              :content => 'Model.peopleController.arrangedObjects',
+              :selection => 'Model.peopleController.selection'
           }
       %>
     <% end %>
@@ -15,7 +15,7 @@
       :title => 'Show guid'
     %>
     <%= label_view :human_label,
-	:bind=>{:value=>"Model.dataController.selectionHumanName"}
+	:bind=>{:value=>"Model.peopleController.selectionHumanName"}
     %>
   <% end %>
 <% end %>

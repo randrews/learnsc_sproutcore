@@ -1,4 +1,6 @@
 public
 *~
 tmp
+.DS_*log
 .DS_*
+log/*

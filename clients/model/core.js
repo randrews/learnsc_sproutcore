@@ -21,7 +21,7 @@ Model = SC.Object.create({
       onSuccess: function(transport) {
 	Model.parseFetchResponse(transport);
 	var coll=Model.Person.findAll();
-	Model.dataController.set('content',coll);
+	Model.peopleController.set('content',coll);
 
 	if (successFunction) {
 	  successFunction();
