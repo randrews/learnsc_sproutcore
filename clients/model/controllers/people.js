@@ -16,5 +16,11 @@ require('core');
 Model.peopleController = SC.ArrayController.create(
 /** @scope Model.peopleController */ {
   allowsMultipleSelection:false,
-  canEditCollection: true
+  canEditCollection: true,
+
+  addObject: function() {
+    var newObj = Model.Person.newRecord();
+    this.pushObject(newObj);
+    this.set('selection',[newObj]);
+  }
 }) ;

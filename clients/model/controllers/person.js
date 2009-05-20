@@ -32,6 +32,7 @@ Model.personController = SC.ObjectController.create(
     var content = this.get('content');
     if (content && content.get('length') == 1) {
       content.objectAt(0).commit();
+      content.objectAt(0).set('newRecord',false);
     }
   }
 }) ;

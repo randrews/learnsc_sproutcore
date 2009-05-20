@@ -17,12 +17,18 @@ Model.Person = SC.Record.extend(
   properties: ['firstName','lastName','salary'],
 
   prettyName:function(){
+    if(this.get('newRecord')){
+      return "New record";
+    }
     return this.get('lastName')+", "+this.get('firstName');
-  }.property('lastName','firstName'),
+  }.property('lastName','firstName','newRecord'),
 
   humanName:function(){
+    if(this.get('newRecord')){
+      return "New record";
+    }
     return this.get('firstName')+" "+this.get('lastName');
-  }.property('lastName','firstName'),
+  }.property('lastName','firstName','newRecord'),
 
   commit: function() {
     if(Model.localMode){
