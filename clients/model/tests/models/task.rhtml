@@ -5,11 +5,13 @@
 <% content_for('final') do %>
 
 <script>
+Model.server.preload(Model.FIXTURES) ;
 
 Test.context("Model.Task",{
 
-  "TODO: Add your own tests here": function() {
-    true.shouldEqual(true) ;
+  "tasks property should work": function() {
+    var guy=Model.Person.find(1);
+    guy.get('tasks').length.shouldEqual(2);
   }
 
 }) ;
