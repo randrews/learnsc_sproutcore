@@ -15,6 +15,23 @@ Model = SC.Object.create({
 
   localMode: (window.location.hash === '#development'),
 
+  fetchTasks: function(){
+    var opts ={
+      method:'get',
+      onSuccess:function(transport){
+	var json=transport.responseJSON;
+	var records=json.records;
+	for(var k=0;k<records.length;k++){
+	  var hash=records[k];
+	  hash.person=Model.Person.find(hash.person);
+	  var record=Model.Task.newRecord(hash);
+	  record.set('newRecord',false);
+	}
+      }
+    };
+    new Ajax.Request('/tasks',opts);
+  },
+
   fetchPeople: function(successFunction) {
     var opts = {
       method:'get',

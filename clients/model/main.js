@@ -17,6 +17,7 @@ function main() {
     Model.peopleController.set('content',coll);
   } else {
     Model.fetchPeople();
+    Model.fetchTasks();
   }
 
   SC.page.awake();

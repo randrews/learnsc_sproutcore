@@ -15,6 +15,6 @@ require('core');
 Model.Task = SC.Record.extend(
 /** @scope Model.Task.prototype */ {
 
-  // TODO: Add your own code here.
+  properties: ['name'],
   personType:'Model.Person'
 }) ;
