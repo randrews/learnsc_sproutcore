@@ -19,10 +19,17 @@
     <%= text_field_view :salary_field,
 	:bind=>{:value=>"Model.personController.salary"}
     %>
-    <%= button_view :save_button,
-	:label=>"Save",
-        :action=>"Model.personController.commitRecord",
-        :bind=>{:enabled=>"Model.personController.hasChanges"}
-    %>
+    <div id="buttons">
+      <%= button_view :save_button,
+	  :label=>"Save",
+          :action=>"Model.personController.commitRecord",
+          :bind=>{:enabled=>"Model.personController.hasChanges"}
+      %>
+      <%= button_view :cancel_button,
+	  :label=>"Cancel",
+          :action=>"Model.personController.discardChanges",
+          :bind=>{:enabled=>"Model.personController.hasChanges"}
+      %>
+    </div>
   <% end %>
 <% end %>

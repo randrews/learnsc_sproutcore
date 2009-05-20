@@ -30,7 +30,25 @@ body {
 
 #save_button
 { 
-  display: block;
-  margin-top: 5px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
   width: 75px;
+ }
+
+#cancel_button
+{ 
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 75px;
+ }
+
+#buttons
+{ 
+  display: block;
+  margin: 0px;
+  margin-top: 5px;
+  position:relative;
+  height: 25px;
  }
