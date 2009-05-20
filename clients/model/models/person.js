@@ -42,16 +42,28 @@ Model.Person = SC.Record.extend(
     var props=$H(this.getPropertyData()).toJSON();
     var parameters = { person: props };
 
-    var opts = {
-      method:'put',
-      emulateUncommonMethods: true,
+    if(this.get('newRecord')){
+      var opts = {
+	method:'post',
+	parameters: parameters,
+	  onSuccess: function(transport) {
+            self.updateAttributes(transport.responseJSON);
+	  }
+      };
 
-      parameters: parameters,
-      onSuccess: function(transport) {
-        self.updateAttributes(transport.responseJSON);
-      }
-    };
+      new Ajax.Request("/people",opts);
+    }else{
+      var opts = {
+	method:'put',
+	emulateUncommonMethods: true,
 
-    new Ajax.Request("/people/"+this.get('guid'),opts);
+	parameters: parameters,
+	  onSuccess: function(transport) {
+            self.updateAttributes(transport.responseJSON);
+	  }
+      };
+
+      new Ajax.Request("/people/"+this.get('guid'),opts);
+    }
   }
 }) ;
