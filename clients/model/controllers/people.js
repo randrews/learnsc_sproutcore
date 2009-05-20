@@ -15,5 +15,6 @@ require('core');
 */
 Model.peopleController = SC.ArrayController.create(
 /** @scope Model.peopleController */ {
-  allowsMultipleSelection:false
+  allowsMultipleSelection:false,
+  canEditCollection: true
 }) ;

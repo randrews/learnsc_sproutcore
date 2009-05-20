@@ -15,10 +15,32 @@
 	:bind=>{:value=>"Model.personController.humanName"}
     %>
     <hr/>
-    <label for="salary_field">Salary</label>
-    <%= text_field_view :salary_field,
-	:bind=>{:value=>"Model.personController.salary"}
-    %>
+
+    <table>
+
+      <tr>
+	<td><label for="first_name_field">First name</label></td>
+	<td><%= text_field_view :first_name_field,
+	    :bind=>{:value=>"Model.personController.firstName"}
+	%></td>
+      </tr>
+
+      <tr>
+	<td><label for="last_name_field">Last name</label></td>
+	<td><%= text_field_view :last_name_field,
+	    :bind=>{:value=>"Model.personController.lastName"}
+	%></td>
+      </tr>
+
+      <tr>
+	<td><label for="salary_field">Salary</label></td>
+	<td><%= text_field_view :salary_field,
+	    :bind=>{:value=>"Model.personController.salary"}
+	%></td>
+      </tr>
+
+    </table>
+
     <div id="buttons">
       <%= button_view :save_button,
 	  :label=>"Save",
