@@ -16,6 +16,7 @@ require('core');
 Model.personController = SC.ObjectController.create(
 /** @scope Model.personController */ {
   contentBinding: 'Model.peopleController.selection',
+
   humanName:function(){
     try{
       var hn=this.get('content').get('humanName');

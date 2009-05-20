@@ -47,6 +47,21 @@
 	%></td>
       </tr>
 
+      <tr>
+	<td valign="top"><label>Tasks</label></td>
+	<td>
+	  <% scroll_view :tasks_scroll, :height=>'100px' do %>
+	    <%= list_view :tasks_list,
+		:content_value_key=>'name',
+		:bind=>{
+	          :content=>"Model.tasksController.arrangedObjects",
+	          :selection=>"Model.tasksController.selection",
+	        }
+	    %>
+	  <% end %>	  
+	</td>
+      </tr>
+
     </table>
 
     <div id="buttons">

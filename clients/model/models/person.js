@@ -15,6 +15,7 @@ require('core');
 Model.Person = SC.Record.extend(
 /** @scope Model.Data.prototype */ {
   properties: ['firstName','lastName','salary','tasks'],
+  
   tasksCollection: SC.Record.hasMany('Model.Task','person'),
   tasks:function(){
     return this.get('tasksCollection').get('records');
