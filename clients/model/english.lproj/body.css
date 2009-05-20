@@ -52,3 +52,22 @@ body {
   position:relative;
   height: 25px;
  }
+
+#above_line
+{ 
+  position:relative;
+  height: 25px;
+ }
+
+#new_button
+{ 
+  position:absolute;
+  right: 0px;
+  width: 75px;
+ }
+
+#human_label
+{ 
+  position:absolute;
+  left: 0px;
+ }

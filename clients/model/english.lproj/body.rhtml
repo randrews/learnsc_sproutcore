@@ -11,9 +11,17 @@
       %>
     <% end %>
 
-    <%= label_view :human_label,
-	:bind=>{:value=>"Model.personController.humanName"}
-    %>
+    
+    <div id="above_line">
+      <%= label_view :human_label,
+	  :bind=>{:value=>"Model.personController.humanName"}
+      %>
+
+      <%= button_view :new_button,
+	  :label=>"Add"
+      # :action=>"Model.personController.commitRecord",
+      %>
+    </div>
     <hr/>
 
     <table>
